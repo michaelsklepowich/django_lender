@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Book
 
 
-def book_list_view(request):
+def books_list_view(request):
     """the request is the user attempting hit list route while logged in
         the responses render the books_list.html which populates the base
     """
@@ -11,10 +11,10 @@ def book_list_view(request):
         'books': books
     }
 
-    return render(request, 'books/book_list.html', context=context)
+    return render(request, 'books/books_list.html', context=context)
 
 
-def book_detail_view(request, pk=None):
+def books_detail_view(request, pk=None):
     """the request is the user attempting hit detail route while logged in
     the responses render the books_detail.html which populates the base
     if book is not found it returns a 404 otherwise returns individual book detail
@@ -23,4 +23,4 @@ def book_detail_view(request, pk=None):
     context = {
         'book': book,
     }
-    return render(request, 'books/book_detail.html', context)
+    return render(request, 'books/books_detail.html', context)
