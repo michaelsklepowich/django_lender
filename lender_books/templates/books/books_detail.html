@@ -1,10 +1,15 @@
 {% extends "base/base.html" %}
+{% load static %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static "styles/books_detail.css" %}">
 <div class="books_detail">
-    <h3>{{ book.title }}</h3>
-    <p>{{ book.author }}</p>
-    <p>{{ book.year }}</p>
-    <p>{{ book.status}}</p>
+    <h1>{{ book.title }}</h1>
+    <li>{{ book.author }}</li>
+    <li>{{ book.year }}</li>
+    <li>{{ book.status}}</li>
+    <li class="back_button_li">
+        <div class="back_button">back</div>
+    </li>
 </div>
 {% endblock %}
